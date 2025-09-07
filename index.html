@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurSutra - Authentic Panchakarma Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</head>
+<body class="bg-gradient-to-br from-ayur-50 to-green-50 min-h-screen">
+    
+    <header class="bg-white shadow-lg border-b-2 border-ayur-200 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-ayur-500 to-ayur-700 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">🕉</span>
+                    </div>
+                    <a href="#AyurSutra"> <h1 class="text-2xl font-bold text-ayur-800">AyurSutra</h1></a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <button onclick="showPage('landing')" class="nav-link text-ayur-700 hover:text-ayur-900 font-medium transition-colors">Home</button>
+                    <a href="#about" class="nav-link text-ayur-700 hover:text-ayur-900 font-medium transition-colors">About</a>
+                    <a href="#features" class="nav-link text-ayur-700 hover:text-ayur-900 font-medium transition-colors">Features</a>
+                    <a href="#how-it-works" class="nav-link text-ayur-700 hover:text-ayur-900 font-medium transition-colors">How It Works</a>
+                    <a href="#contact" class="nav-link text-ayur-700 hover:text-ayur-900 font-medium transition-colors">Contact</a>
+                    
+                    <div class="relative">
+                        <button id="signInBtn" class="bg-ayur-600 hover:bg-ayur-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
+                            <span>Sign In / Sign Up</span>
+                            <span class="text-sm">▼</span>
+                        </button>
+                        
+                        <div id="signInDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50">
+                            <div class="py-2">
+                                <button onclick="showPage('patient-registration')" class="w-full text-left px-4 py-3 text-gray-700 hover:bg-ayur-50 hover:text-ayur-800 transition-colors flex items-center space-x-3">
+                                    <span class="text-lg">👤</span>
+                                    <span class="font-medium">Patient Sign Up</span>
+                                </button>
+                                <button onclick="showPage('professional-registration')" class="w-full text-left px-4 py-3 text-gray-700 hover:bg-ayur-50 hover:text-ayur-800 transition-colors flex items-center space-x-3">
+                                    <span class="text-lg">👨‍⚕</span>
+                                    <span class="font-medium">Professional Sign Up</span>
+                                </button>
+                                <hr class="my-2">
+                                <button onclick="showPage('patient-dashboard')" class="w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition-colors flex items-center space-x-3">
+                                    <span class="text-lg">📊</span>
+                                    <span class="font-medium">Patient Dashboard</span>
+                                </button>
+                                <button onclick="showPage('doctor-dashboard')" class="w-full text-left px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-800 transition-colors flex items-center space-x-3">
+                                    <span class="text-lg">👨‍⚕</span>
+                                    <span class="font-medium">Doctor Dashboard</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <button class="md:hidden p-2 text-ayur-600">
+                    <span class="text-2xl">☰</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="pageContainer">
+        
+        <div id="landing" class="page">
+            
+            <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <div class="w-full h-full bg-gradient-to-r from-ayur-800 to-ayur-600 opacity-90"></div>
+                    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><defs><pattern id=%22oil%22 x=%220%22 y=%220%22 width=%22100%22 height=%22100%22 patternUnits=%22userSpaceOnUse%22><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23f0f9f4%22 opacity=%220.3%22/></pattern></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23oil)%22/></svg>')">
+                        <div class="floating-elements">
+                            <div class="floating-element">🌿</div>
+                            <div class="floating-element">💧</div>
+                            <div class="floating-element">🧘‍♀</div>
+                            <div class="floating-element">🌸</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Discover the Ancient
+                        <span class="text-ayur-200">Art of Healing</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-ayur-100 leading-relaxed">
+                        Experience authentic Panchakarma therapy with personalized treatment plans, 
+                        expert practitioners, and holistic wellness tracking
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button onclick="showPage('patient-registration')" class="bg-gradient-to-r from-ayur-400 to-ayur-500 hover:from-ayur-500 hover:to-ayur-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-2xl">
+                            🌟 Book a Session
+                        </button>
+                        <button onclick="scrollToSection('panchakarma-info')" class="border-2 border-white text-white hover:bg-white hover:text-ayur-800 px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                            Learn More
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-ayur-200">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">5000+</div>
+                            <div class="text-sm">Happy Patients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">50+</div>
+                            <div class="text-sm">Expert Practitioners</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">15+</div>
+                            <div class="text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="panchakarma-info" class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ayur-800 mb-4">
+                            The Healing Art of Panchakarma
+                        </h2>
+                        <p class="text-xl text-ayur-600 max-w-3xl mx-auto leading-relaxed">
+                            Discover the five sacred cleansing therapies that have restored balance and vitality for thousands of years
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        
+                        <div class="bg-gradient-to-br from-ayur-50 to-ayur-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-ayur-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-3xl">🌿</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-ayur-800 mb-4">Vamana</h3>
+                            <p class="text-ayur-700 leading-relaxed">
+                                Therapeutic emesis to eliminate excess Kapha dosha, treating respiratory and digestive disorders naturally.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-3xl">💧</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-800 mb-4">Virechana</h3>
+                            <p class="text-blue-700 leading-relaxed">
+                                Controlled purgation therapy to cleanse Pitta dosha, addressing liver disorders and skin conditions.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-3xl">🏺</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-orange-800 mb-4">Basti</h3>
+                            <p class="text-orange-700 leading-relaxed">
+                                Medicated enema therapy to balance Vata dosha, treating neurological and joint disorders effectively.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-3xl">👃</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-purple-800 mb-4">Nasya</h3>
+                            <p class="text-purple-700 leading-relaxed">
+                                Nasal administration of medicines to treat head and neck disorders, enhancing mental clarity.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 md:col-span-2 lg:col-span-1">
+                            <div class="w-20 h-20 bg-red-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-3xl">🩸</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-red-800 mb-4">Raktamokshana</h3>
+                            <p class="text-red-700 leading-relaxed">
+                                Bloodletting therapy to purify blood and treat skin diseases, hypertension, and inflammatory conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button onclick="showPage('patient-registration')" class="bg-gradient-to-r from-ayur-600 to-ayur-700 hover:from-ayur-700 hover:to-ayur-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105">
+                            Start Your Healing Journey
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="py-20 bg-ayur-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-ayur-800 mb-4">Why Choose Ayursutra?</h2>
+                        <p class="text-xl text-ayur-600 max-w-3xl mx-auto">
+                            Experience the perfect blend of ancient wisdom and modern technology
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                            <div class="w-16 h-16 bg-ayur-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl">👨‍⚕</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Expert Practitioners</h3>
+                            <p class="text-gray-600">Certified Ayurvedic doctors with years of specialized Panchakarma training</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Progress Tracking</h3>
+                            <p class="text-gray-600">Advanced wellness analytics to monitor your healing journey</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl">🌿</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Authentic Treatments</h3>
+                            <p class="text-gray-600">Traditional methods using pure, organic herbs and oils</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-ayur-800 mb-4">What Our Patients Say</h2>
+                        <p class="text-xl text-ayur-600">Real stories of transformation and healing</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-ayur-50 rounded-xl p-8 border-l-4 border-ayur-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-ayur-200 rounded-full flex items-center justify-center mr-4">
+                                    <span class="font-bold text-ayur-800">RS</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Rajesh Sharma</h4>
+                                    <p class="text-sm text-gray-600">Chronic Pain Patient</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 italic">
+                                "After 3 months of Panchakarma therapy, my chronic back pain has reduced by 80%. 
+                                The personalized treatment plan was exactly what I needed."
+                            </p>
+                            <div class="mt-4 text-yellow-500">★★★★★</div>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-xl p-8 border-l-4 border-blue-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
+                                    <span class="font-bold text-blue-800">PS</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Priya Singh</h4>
+                                    <p class="text-sm text-gray-600">Stress Management</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 italic">
+                                "The Shirodhara sessions completely transformed my sleep quality and stress levels. 
+                                I feel more balanced and energetic than ever before."
+                            </p>
+                            <div class="mt-4 text-yellow-500">★★★★★</div>
+                        </div>
+
+                        <div class="bg-green-50 rounded-xl p-8 border-l-4 border-green-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center mr-4">
+                                    <span class="font-bold text-green-800">AK</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Amit Kumar</h4>
+                                    <p class="text-sm text-gray-600">Digestive Health</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 italic">
+                                "My digestive issues that plagued me for years are now completely resolved. 
+                                The holistic approach here is truly remarkable."
+                            </p>
+                            <div class="mt-4 text-yellow-500">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="py-20 bg-ayur-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-ayur-800 mb-4">How It Works</h2>
+                        <p class="text-xl text-ayur-600">Your journey to wellness in simple steps</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-ayur-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Register</h3>
+                            <p class="text-gray-600">Complete your health profile and treatment preferences</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-ayur-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Consultation</h3>
+                            <p class="text-gray-600">Meet with our expert practitioners for personalized assessment</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-ayur-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Treatment</h3>
+                            <p class="text-gray-600">Begin your customized Panchakarma therapy program</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-ayur-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">4</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Track Progress</h3>
+                            <p class="text-gray-600">Monitor your wellness journey with detailed analytics</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="contact" class="bg-ayur-800 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        
+                        <div class="md:col-span-2">
+                            <div class="flex items-center space-x-3 mb-6">
+                                <div class="w-10 h-10 bg-gradient-to-br from-ayur-400 to-ayur-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-lg">🕉</span>
+                                </div>
+                                <h3 class="text-2xl font-bold">Ayursutra</h3>
+                            </div>
+                            <p class="text-ayur-200 mb-6 leading-relaxed">
+                                Authentic Panchakarma healing center dedicated to restoring balance and vitality 
+                                through traditional Ayurvedic therapies and modern wellness tracking.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-bold mb-3">Stay Updated</h4>
+                                <div class="flex">
+                                    <input type="email" placeholder="Enter your email" 
+                                        class="flex-1 px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none">
+                                    <button class="bg-ayur-600 hover:bg-ayur-700 px-6 py-2 rounded-r-lg transition-colors">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-4">Quick Links</h4>
+                            <ul class="space-y-2 text-ayur-200">
+                                <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Treatments</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Practitioners</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-4">Contact Info</h4>
+                            <div class="space-y-3 text-ayur-200">
+                                <div class="flex items-center space-x-3">
+                                    <span>📍</span>
+                                    <span>123 Wellness Street, Mumbai, India</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span>📞</span>
+                                    <span>+91 98765 43210</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span>✉</span>
+                                    <span>info@ayursutra.com</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="font-bold mb-3">Follow Us</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-ayur-700 hover:bg-ayur-600 rounded-full flex items-center justify-center transition-colors">
+                                        <span>📘</span>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-ayur-700 hover:bg-ayur-600 rounded-full flex items-center justify-center transition-colors">
+                                        <span>📷</span>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-ayur-700 hover:bg-ayur-600 rounded-full flex items-center justify-center transition-colors">
+                                        <span>🐦</span>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-ayur-700 hover:bg-ayur-600 rounded-full flex items-center justify-center transition-colors">
+                                        <span>💼</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-ayur-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-ayur-300 text-sm">
+                            © 2025 AyurSutra. All rights reserved. | Privacy Policy | Terms of Service
+                        </p>
+                        <div class="flex items-center space-x-4 mt-4 md:mt-0 text-ayur-300 text-sm">
+                            <span>🏆 Certified Ayurvedic Center</span>
+                            <span>🌿 100% Natural Treatments</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div id="patient-registration" class="page hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-ayur-800 mb-2">Welcome to Your Wellness Journey</h2>
+                    <p class="text-ayur-600 text-lg">Join thousands who have found healing through authentic Panchakarma therapy</p>
+                    <div class="mt-4 flex justify-center items-center space-x-8 text-sm text-ayur-700">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Personalized Treatment Plans</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Expert Ayurvedic Practitioners</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Holistic Wellness Approach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <div class="flex items-center justify-center space-x-4">
+                        <div class="flex items-center">
+                            <div id="step1-indicator" class="w-8 h-8 bg-ayur-600 text-white rounded-full flex items-center justify-center text-sm font-medium">1</div>
+                            <span class="ml-2 text-sm font-medium text-ayur-800">Personal Info</span>
+                        </div>
+                        <div class="w-16 h-1 bg-gray-300 rounded" id="progress1"></div>
+                        <div class="flex items-center">
+                            <div id="step2-indicator" class="w-8 h-8 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center text-sm font-medium">2</div>
+                            <span class="ml-2 text-sm font-medium text-gray-600">Health History</span>
+                        </div>
+                        <div class="w-16 h-1 bg-gray-300 rounded" id="progress2"></div>
+                        <div class="flex items-center">
+                            <div id="step3-indicator" class="w-8 h-8 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center text-sm font-medium">3</div>
+                            <span class="ml-2 text-sm font-medium text-gray-600">Medical Details</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <form id="patientRegistrationForm" onsubmit="handlePatientSubmit(event)">
+                        
+                        <div id="patient-step1" class="patient-step">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Personal Information</h3>
+                                <p class="text-gray-600">Let's start with some basic information about you</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="md:col-span-2">
+                                    <label for="patientFullName" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Full Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="patientFullName" name="fullName" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="Enter your full name">
+                                </div>
+
+                                <div>
+                                    <label for="patientAge" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Age <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="number" id="patientAge" name="age" required min="1" max="120"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="Your age">
+                                </div>
+
+                                <div>
+                                    <label for="patientGender" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Gender <span class="text-red-500">*</span>
+                                    </label>
+                                    <select id="patientGender" name="gender" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                        <option value="">Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="patientPhone" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Phone Number <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="tel" id="patientPhone" name="phone" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="+91 98765 43210">
+                                </div>
+
+                                <div>
+                                    <label for="patientEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Email Address <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="email" id="patientEmail" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="your.email@example.com">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label for="patientLocation" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Location <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <input type="text" id="patientCity" name="city" required
+                                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="City">
+                                        <input type="text" id="patientState" name="state" required
+                                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="State">
+                                        <input type="text" id="patientPincode" name="pincode" required
+                                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="PIN Code">
+                                    </div>
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Emergency Contact</label>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <input type="text" id="patientEmergencyName" name="emergencyName"
+                                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Contact person name">
+                                        <input type="tel" id="patientEmergencyPhone" name="emergencyPhone"
+                                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Emergency contact number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end mt-8">
+                                <button type="button" onclick="nextPatientStep()" class="px-8 py-3 bg-ayur-600 hover:bg-ayur-700 text-white font-medium rounded-lg transition-colors">
+                                    Next Step →
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="patient-step2" class="patient-step hidden">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Health History</h3>
+                                <p class="text-gray-600">Help us understand your current health status and concerns</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="patientHealthConcerns" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Current Health Concerns <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="chronic-pain" class="text-ayur-600">
+                                            <span class="text-sm">Chronic Pain</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="stress-anxiety" class="text-ayur-600">
+                                            <span class="text-sm">Stress & Anxiety</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="digestive-issues" class="text-ayur-600">
+                                            <span class="text-sm">Digestive Issues</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="sleep-disorders" class="text-ayur-600">
+                                            <span class="text-sm">Sleep Disorders</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="joint-problems" class="text-ayur-600">
+                                            <span class="text-sm">Joint Problems</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-ayur-50 cursor-pointer">
+                                            <input type="checkbox" name="patientHealthConcerns" value="skin-conditions" class="text-ayur-600">
+                                            <span class="text-sm">Skin Conditions</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="patientChronicConditions" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Chronic Medical Conditions
+                                    </label>
+                                    <textarea id="patientChronicConditions" name="chronicConditions" rows="4"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="Please list any chronic conditions like diabetes, hypertension, arthritis, etc. If none, write 'None'"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="patientCurrentMedications" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Current Medications & Supplements
+                                    </label>
+                                    <textarea id="patientCurrentMedications" name="currentMedications" rows="3"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="List all medications, vitamins, and supplements you're currently taking. Include dosage if possible."></textarea>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-4">Lifestyle Information</label>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="patientExerciseLevel" class="block text-sm text-gray-600 mb-2">Exercise Level</label>
+                                            <select id="patientExerciseLevel" name="exerciseLevel"
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                                <option value="">Select level</option>
+                                                <option value="sedentary">Sedentary (little to no exercise)</option>
+                                                <option value="light">Light (1-3 days/week)</option>
+                                                <option value="moderate">Moderate (3-5 days/week)</option>
+                                                <option value="active">Very Active (6-7 days/week)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="patientStressLevel" class="block text-sm text-gray-600 mb-2">Stress Level (1-10)</label>
+                                            <input type="range" id="patientStressLevel" name="stressLevel" min="1" max="10" value="5"
+                                                class="w-full" oninput="updatePatientStressValue(this.value)">
+                                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                                <span>Low</span>
+                                                <span id="patientStressValue" class="font-medium">5</span>
+                                                <span>High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-8">
+                                <button type="button" onclick="prevPatientStep()" class="px-8 py-3 bg-gray-300 hover:bg-gray-400 text-gray-700 font-medium rounded-lg transition-colors">
+                                    ← Previous
+                                </button>
+                                <button type="button" onclick="nextPatientStep()" class="px-8 py-3 bg-ayur-600 hover:bg-ayur-700 text-white font-medium rounded-lg transition-colors">
+                                    Next Step →
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="patient-step3" class="patient-step hidden">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Medical Details & Therapy History</h3>
+                                <p class="text-gray-600">Final details to create your personalized treatment plan</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-4">
+                                        Previous Therapy Experience
+                                    </label>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="flex items-center space-x-3">
+                                                <input type="radio" name="patientPastTherapy" value="none" class="text-ayur-600" onchange="togglePatientTherapyDetails()">
+                                                <span>No previous Ayurvedic or alternative therapy experience</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="flex items-center space-x-3">
+                                                <input type="radio" name="patientPastTherapy" value="ayurvedic" class="text-ayur-600" onchange="togglePatientTherapyDetails()">
+                                                <span>Previous Ayurvedic treatments</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="flex items-center space-x-3">
+                                                <input type="radio" name="patientPastTherapy" value="alternative" class="text-ayur-600" onchange="togglePatientTherapyDetails()">
+                                                <span>Other alternative therapies (Acupuncture, Homeopathy, etc.)</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="flex items-center space-x-3">
+                                                <input type="radio" name="patientPastTherapy" value="both" class="text-ayur-600" onchange="togglePatientTherapyDetails()">
+                                                <span>Both Ayurvedic and other alternative therapies</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div id="patientTherapyDetails" class="mt-4 hidden">
+                                        <textarea id="patientTherapyHistory" name="therapyHistory" rows="4"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Please describe your previous therapy experiences, what treatments you received, when, and their effectiveness..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="patientAllergies" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Allergies & Sensitivities <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="space-y-3">
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                            <label class="flex items-center space-x-2">
+                                                <input type="checkbox" name="patientAllergyTypes" value="food" class="text-ayur-600">
+                                                <span class="text-sm">Food Allergies</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2">
+                                                <input type="checkbox" name="patientAllergyTypes" value="medication" class="text-ayur-600">
+                                                <span class="text-sm">Medication</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2">
+                                                <input type="checkbox" name="patientAllergyTypes" value="environmental" class="text-ayur-600">
+                                                <span class="text-sm">Environmental</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2">
+                                                <input type="checkbox" name="patientAllergyTypes" value="none" class="text-ayur-600" onchange="handlePatientNoAllergies(this)">
+                                                <span class="text-sm">No Known Allergies</span>
+                                            </label>
+                                        </div>
+                                        <textarea id="patientAllergyDetails" name="allergyDetails" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Please specify any allergies, sensitivities, or reactions to foods, medications, oils, herbs, or environmental factors..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="patientTreatmentGoals" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Treatment Goals & Expectations
+                                    </label>
+                                    <textarea id="patientTreatmentGoals" name="treatmentGoals" rows="4"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                        placeholder="What do you hope to achieve through Panchakarma therapy? What are your main wellness goals?"></textarea>
+                                </div>
+
+                                <div class="bg-ayur-50 p-6 rounded-lg border border-ayur-200">
+                                    <h4 class="font-medium text-ayur-800 mb-3">Consent & Agreement</h4>
+                                    <div class="space-y-3">
+                                        <label class="flex items-start space-x-3">
+                                            <input type="checkbox" name="patientConsent" value="treatment" required class="text-ayur-600 mt-1">
+                                            <span class="text-sm text-gray-700">I consent to receive Panchakarma treatments and understand that results may vary based on individual conditions.</span>
+                                        </label>
+                                        <label class="flex items-start space-x-3">
+                                            <input type="checkbox" name="patientConsent" value="privacy" required class="text-ayur-600 mt-1">
+                                            <span class="text-sm text-gray-700">I agree to the privacy policy and consent to the collection and use of my health information for treatment purposes.</span>
+                                        </label>
+                                        <label class="flex items-start space-x-3">
+                                            <input type="checkbox" name="patientConsent" value="communication" class="text-ayur-600 mt-1">
+                                            <span class="text-sm text-gray-700">I agree to receive appointment reminders, health tips, and treatment updates via my preferred communication method.</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-8">
+                                <button type="button" onclick="prevPatientStep()" class="px-8 py-3 bg-gray-300 hover:bg-gray-400 text-gray-700 font-medium rounded-lg transition-colors">
+                                    ← Previous
+                                </button>
+                                <button type="submit" class="px-8 py-3 bg-gradient-to-r from-ayur-600 to-ayur-700 hover:from-ayur-700 hover:to-ayur-800 text-white font-medium rounded-lg transition-all transform hover:scale-105">
+                                    Complete Registration ✨
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="professional-registration" class="page hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-ayur-800 mb-2">Join Our Professional Network</h2>
+                    <p class="text-ayur-600 text-lg">Connect with patients and grow your practice through our platform</p>
+                    <div class="mt-4 flex justify-center items-center space-x-8 text-sm text-ayur-700">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Verified Professional Network</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Advanced Practice Management</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-ayur-500 rounded-full"></span>
+                            <span>Patient Analytics & Insights</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <form id="professionalRegistrationForm" onsubmit="handleProfessionalSubmit(event)">
+                        
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Select Your Professional Type</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="professional-type-card cursor-pointer">
+                                    <input type="radio" name="professionalType" value="doctor" class="hidden" onchange="updateProfessionalForm()">
+                                    <div class="border-2 border-gray-300 rounded-xl p-6 text-center hover:border-ayur-500 transition-colors">
+                                        <div class="w-16 h-16 bg-ayur-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-3xl">👨‍⚕</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Doctor</h4>
+                                        <p class="text-gray-600">Ayurvedic practitioners and medical professionals</p>
+                                    </div>
+                                </label>
+
+                                <label class="professional-type-card cursor-pointer">
+                                    <input type="radio" name="professionalType" value="manufacturer" class="hidden" onchange="updateProfessionalForm()">
+                                    <div class="border-2 border-gray-300 rounded-xl p-6 text-center hover:border-ayur-500 transition-colors">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-3xl">🏭</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Manufacturer</h4>
+                                        <p class="text-gray-600">Ayurvedic medicine and product manufacturers</p>
+                                    </div>
+                                </label>
+
+                                <label class="professional-type-card cursor-pointer">
+                                    <input type="radio" name="professionalType" value="hospital" class="hidden" onchange="updateProfessionalForm()">
+                                    <div class="border-2 border-gray-300 rounded-xl p-6 text-center hover:border-ayur-500 transition-colors">
+                                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-3xl">🏥</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Hospital</h4>
+                                        <p class="text-gray-600">Healthcare institutions and wellness centers</p>
+                                    </div>
+                                </label>
+
+                                <label class="professional-type-card cursor-pointer">
+                                    <input type="radio" name="professionalType" value="store" class="hidden" onchange="updateProfessionalForm()">
+                                    <div class="border-2 border-gray-300 rounded-xl p-6 text-center hover:border-ayur-500 transition-colors">
+                                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-3xl">🏪</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Store</h4>
+                                        <p class="text-gray-600">Ayurvedic pharmacies and retail outlets</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="professionalFormFields" class="hidden">
+                            
+                            <div id="doctorFields" class="professional-fields hidden">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Doctor Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="md:col-span-2">
+                                        <label for="doctorName" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Full Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="doctorName" name="doctorName"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Dr. Your Full Name">
+                                    </div>
+
+                                    <div>
+                                        <label for="specialization" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Specialization <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="specialization" name="specialization"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select specialization</option>
+                                            <option value="panchakarma">Panchakarma Specialist</option>
+                                            <option value="general-ayurveda">General Ayurveda</option>
+                                            <option value="kayachikitsa">Kayachikitsa (Internal Medicine)</option>
+                                            <option value="shalya-tantra">Shalya Tantra (Surgery)</option>
+                                            <option value="prasuti-tantra">Prasuti Tantra (Gynecology)</option>
+                                            <option value="kaumarbhritya">Kaumarbhritya (Pediatrics)</option>
+                                            <option value="shalakya-tantra">Shalakya Tantra (ENT & Ophthalmology)</option>
+                                            <option value="agada-tantra">Agada Tantra (Toxicology)</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Years of Experience <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="experience" name="experience"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select experience</option>
+                                            <option value="0-2">0-2 years</option>
+                                            <option value="3-5">3-5 years</option>
+                                            <option value="6-10">6-10 years</option>
+                                            <option value="11-15">11-15 years</option>
+                                            <option value="16-20">16-20 years</option>
+                                            <option value="20+">20+ years</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="licenseNumber" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Medical License Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="licenseNumber" name="licenseNumber"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Enter your license number">
+                                    </div>
+
+                                    <div>
+                                        <label for="registrationCouncil" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Registration Council <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="registrationCouncil" name="registrationCouncil"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="e.g., State Ayurvedic Medical Council">
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <label for="clinicAddress" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Clinic/Practice Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <textarea id="clinicAddress" name="clinicAddress" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Enter your complete clinic address"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label for="doctorPhone" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Phone Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="tel" id="doctorPhone" name="doctorPhone"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="+91 98765 43210">
+                                    </div>
+
+                                    <div>
+                                        <label for="doctorEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Email Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="email" id="doctorEmail" name="doctorEmail"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="doctor@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="manufacturerFields" class="professional-fields hidden">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Manufacturer Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="md:col-span-2">
+                                        <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Company Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="companyName" name="companyName"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Your Company Name">
+                                    </div>
+
+                                    <div>
+                                        <label for="businessType" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Business Type <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="businessType" name="businessType"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select business type</option>
+                                            <option value="ayurvedic-medicines">Ayurvedic Medicines</option>
+                                            <option value="herbal-products">Herbal Products</option>
+                                            <option value="cosmetics">Ayurvedic Cosmetics</option>
+                                            <option value="oils-extracts">Oils & Extracts</option>
+                                            <option value="equipment">Medical Equipment</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="manufacturingLicense" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Manufacturing License <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="manufacturingLicense" name="manufacturingLicense"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="License number">
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <label for="manufacturerAddress" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Business Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <textarea id="manufacturerAddress" name="manufacturerAddress" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Enter your complete business address"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label for="manufacturerPhone" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Phone Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="tel" id="manufacturerPhone" name="manufacturerPhone"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="+91 98765 43210">
+                                    </div>
+
+                                    <div>
+                                        <label for="manufacturerEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Email Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="email" id="manufacturerEmail" name="manufacturerEmail"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="business@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="hospitalFields" class="professional-fields hidden">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Hospital Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="md:col-span-2">
+                                        <label for="hospitalName" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Hospital/Institution Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="hospitalName" name="hospitalName"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Hospital/Center Name">
+                                    </div>
+
+                                    <div>
+                                        <label for="hospitalType" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Institution Type <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="hospitalType" name="hospitalType"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select type</option>
+                                            <option value="ayurvedic-hospital">Ayurvedic Hospital</option>
+                                            <option value="wellness-center">Wellness Center</option>
+                                            <option value="panchakarma-center">Panchakarma Center</option>
+                                            <option value="multi-specialty">Multi-specialty Hospital</option>
+                                            <option value="clinic-chain">Clinic Chain</option>
+                                            <option value="research-institute">Research Institute</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="bedCapacity" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Bed Capacity
+                                        </label>
+                                        <select id="bedCapacity" name="bedCapacity"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select capacity</option>
+                                            <option value="1-10">1-10 beds</option>
+                                            <option value="11-25">11-25 beds</option>
+                                            <option value="26-50">26-50 beds</option>
+                                            <option value="51-100">51-100 beds</option>
+                                            <option value="100+">100+ beds</option>
+                                            <option value="outpatient-only">Outpatient Only</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="hospitalLicense" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Hospital License Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="hospitalLicense" name="hospitalLicense"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="License number">
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <label for="hospitalAddress" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Hospital Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <textarea id="hospitalAddress" name="hospitalAddress" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Enter complete hospital address"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label for="hospitalPhone" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Phone Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="tel" id="hospitalPhone" name="hospitalPhone"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="+91 98765 43210">
+                                    </div>
+
+                                    <div>
+                                        <label for="hospitalEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Email Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="email" id="hospitalEmail" name="hospitalEmail"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="hospital@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="storeFields" class="professional-fields hidden">
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Store Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="md:col-span-2">
+                                        <label for="storeName" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Store Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="storeName" name="storeName"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Your Store Name">
+                                    </div>
+
+                                    <div>
+                                        <label for="storeType" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Store Type <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="storeType" name="storeType"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors">
+                                            <option value="">Select store type</option>
+                                            <option value="ayurvedic-pharmacy">Ayurvedic Pharmacy</option>
+                                            <option value="herbal-store">Herbal Products Store</option>
+                                            <option value="wellness-retail">Wellness Retail</option>
+                                            <option value="online-store">Online Store</option>
+                                            <option value="chain-store">Chain Store</option>
+                                            <option value="specialty-store">Specialty Store</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="pharmacistLicense" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Pharmacist License <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="pharmacistLicense" name="pharmacistLicense"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="License number">
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <label for="storeAddress" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Store Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <textarea id="storeAddress" name="storeAddress" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Enter complete store address"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label for="storePhone" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Phone Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="tel" id="storePhone" name="storePhone"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="+91 98765 43210">
+                                    </div>
+
+                                    <div>
+                                        <label for="storeEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Email Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="email" id="storeEmail" name="storeEmail"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="store@example.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-8 border-t border-gray-200">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-4">Additional Information</h4>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="professionalBio" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Professional Bio/Description
+                                        </label>
+                                        <textarea id="professionalBio" name="professionalBio" rows="4"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="Tell us about your expertise, services, and what makes you unique..."></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label for="servicesOffered" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Services/Products Offered
+                                        </label>
+                                        <textarea id="servicesOffered" name="servicesOffered" rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ayur-500 focus:border-ayur-500 transition-colors"
+                                            placeholder="List the main services or products you offer..."></textarea>
+                                    </div>
+
+                                    <div class="bg-ayur-50 p-6 rounded-lg border border-ayur-200">
+                                        <h4 class="font-medium text-ayur-800 mb-3">Professional Agreement</h4>
+                                        <div class="space-y-3">
+                                            <label class="flex items-start space-x-3">
+                                                <input type="checkbox" name="professionalConsent" value="verification" required class="text-ayur-600 mt-1">
+                                                <span class="text-sm text-gray-700">I understand that my credentials will be verified before account activation and agree to provide additional documentation if requested.</span>
+                                            </label>
+                                            <label class="flex items-start space-x-3">
+                                                <input type="checkbox" name="professionalConsent" value="terms" required class="text-ayur-600 mt-1">
+                                                <span class="text-sm text-gray-700">I agree to the professional terms of service and will maintain the highest standards of care and professionalism.</span>
+                                            </label>
+                                            <label class="flex items-start space-x-3">
+                                                <input type="checkbox" name="professionalConsent" value="updates" class="text-ayur-600 mt-1">
+                                                <span class="text-sm text-gray-700">I agree to receive platform updates, patient referrals, and professional communications.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8">
+                                <button type="submit" class="px-8 py-3 bg-gradient-to-r from-ayur-600 to-ayur-700 hover:from-ayur-700 hover:to-ayur-800 text-white font-medium rounded-lg transition-all transform hover:scale-105">
+                                    Submit Professional Application ✨
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="patient-dashboard" class="page hidden">
+            <div class="bg-white shadow-md border-b border-ayur-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <div class="flex items-center space-x-6">
+                            <button onclick="showDashboardSection('dashboard')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">🏠</span>
+                                <span>Dashboard</span>
+                            </button>
+                            <button onclick="showDashboardSection('reports')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">📊</span>
+                                <span>My Reports</span>
+                            </button>
+                            <button onclick="showDashboardSection('treatments')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">💆‍♀️</span>
+                                <span>My Treatments</span>
+                            </button>
+                            <button onclick="showDashboardSection('support')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">💬</span>
+                                <span>Support</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-ayur-200 rounded-full flex items-center justify-center">
+                                <span class="text-ayur-800 font-medium text-sm">PS</span>
+                            </div>
+                            <span class="text-ayur-700 font-medium">Priya Sharma</span>
+                            <button onclick="showNotifications()" class="relative p-2 text-ayur-600 hover:text-ayur-800 transition-colors">
+                                <span class="text-xl">🔔</span>
+                                <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                
+                <div id="dashboard-section" class="dashboard-section">
+                    <div class="mb-8">
+                        <div class="bg-gradient-to-r from-ayur-600 to-ayur-700 rounded-2xl p-8 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h2 class="text-3xl font-bold mb-2">Welcome back, Priya! 🙏</h2>
+                                    <p class="text-ayur-100 text-lg">Your wellness journey continues with personalized Panchakarma therapy</p>
+                                    <div class="mt-4 flex items-center space-x-6">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">5</div>
+                                            <div class="text-sm text-ayur-200">Sessions Completed</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">78%</div>
+                                            <div class="text-sm text-ayur-200">Progress Score</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">5</div>
+                                            <div class="text-sm text-ayur-200">Sessions Remaining</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden md:block">
+                                    <div class="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <span class="text-6xl">🧘‍♀️</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                        <button onclick="bookAppointment()" class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-center group">
+                            <div class="w-12 h-12 bg-ayur-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-ayur-200 transition-colors">
+                                <span class="text-ayur-600 text-xl">📅</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Book Session</h3>
+                            <p class="text-sm text-gray-600">Schedule your next therapy</p>
+                        </button>
+
+                        <button onclick="showDashboardSection('reports')" class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-center group">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-200 transition-colors">
+                                <span class="text-blue-600 text-xl">📊</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">My Reports</h3>
+                            <p class="text-sm text-gray-600">View detailed analytics</p>
+                        </button>
+
+                        <button onclick="showDashboardSection('treatments')" class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-center group">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-200 transition-colors">
+                                <span class="text-orange-600 text-xl">💆‍♀️</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">My Treatments</h3>
+                            <p class="text-sm text-gray-600">View therapy details</p>
+                        </button>
+
+                        <button onclick="showDashboardSection('support')" class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-center group">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-200 transition-colors">
+                                <span class="text-green-600 text-xl">💬</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Support</h3>
+                            <p class="text-sm text-gray-600">Get help & guidance</p>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <div class="lg:col-span-2 space-y-6">
+                            
+                            <div class="bg-white rounded-xl shadow-md p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-semibold text-gray-800">Upcoming Sessions</h3>
+                                    <button onclick="viewAllAppointments()" class="text-ayur-600 hover:text-ayur-800 text-sm font-medium">View All</button>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-ayur-500 bg-ayur-50 p-4 rounded-r-lg">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Shirodhara Therapy</h4>
+                                                <p class="text-ayur-700 font-medium">Tomorrow, Dec 20 • 2:00 PM - 3:30 PM</p>
+                                                <p class="text-sm text-gray-600 mt-1">with Dr. Ayush Verma</p>
+                                                <div class="mt-2 flex items-center space-x-4">
+                                                    <span class="text-xs bg-ayur-200 text-ayur-800 px-2 py-1 rounded">Session 6 of 10</span>
+                                                    <span class="text-xs text-gray-600">📍 Room 3, AyurCare Center</span>
+                                                </div>
+                                            </div>
+                                            <button onclick="viewSessionDetails()" class="px-3 py-1 bg-ayur-600 hover:bg-ayur-700 text-white text-sm rounded transition-colors">
+                                                Details
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-l-4 border-gray-300 bg-gray-50 p-4 rounded-r-lg">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">Abhyanga Massage</h4>
+                                                <p class="text-gray-700 font-medium">Dec 22 • 10:00 AM - 11:30 AM</p>
+                                                <p class="text-sm text-gray-600 mt-1">with Dr. Kavita Nair</p>
+                                            </div>
+                                            <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm rounded transition-colors">
+                                                Reschedule
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl shadow-md p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Your Wellness Progress</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                    <div class="text-center p-4 bg-ayur-50 rounded-lg">
+                                        <div class="text-2xl font-bold text-ayur-800">85%</div>
+                                        <div class="text-sm text-ayur-600">Pain Relief</div>
+                                    </div>
+                                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                        <div class="text-2xl font-bold text-blue-800">72%</div>
+                                        <div class="text-sm text-blue-600">Stress Reduction</div>
+                                    </div>
+                                    <div class="text-center p-4 bg-green-50 rounded-lg">
+                                        <div class="text-2xl font-bold text-green-800">90%</div>
+                                        <div class="text-sm text-green-600">Sleep Quality</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-sm mb-2">
+                                            <span class="font-medium text-gray-700">Overall Treatment Progress</span>
+                                            <span class="text-ayur-600 font-medium">50%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-ayur-500 to-ayur-600 h-3 rounded-full transition-all duration-500" style="width: 50%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between text-sm mb-2">
+                                            <span class="font-medium text-gray-700">Wellness Goals Achievement</span>
+                                            <span class="text-blue-600 font-medium">78%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-500" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button onclick="provideFeedback()" class="mt-4 w-full bg-ayur-100 hover:bg-ayur-200 text-ayur-800 font-medium py-2 px-4 rounded-lg transition-colors">
+                                    📝 Provide Session Feedback
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            
+                            <div class="bg-white rounded-xl shadow-md p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Today's Reminders</h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="p-3 bg-orange-50 border-l-4 border-orange-400 rounded-r">
+                                        <p class="font-medium text-orange-800">Pre-Session Preparation</p>
+                                        <p class="text-sm text-orange-700 mt-1">Avoid heavy meals 2 hours before tomorrow's Shirodhara session</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-blue-50 border-l-4 border-blue-400 rounded-r">
+                                        <p class="font-medium text-blue-800">Hydration Reminder</p>
+                                        <p class="text-sm text-blue-700 mt-1">Drink warm water throughout the day for better detox results</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-green-50 border-l-4 border-green-400 rounded-r">
+                                        <p class="font-medium text-green-800">Meditation Time</p>
+                                        <p class="text-sm text-green-700 mt-1">15 minutes of mindfulness practice recommended today</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl shadow-md p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Your Treatment Plan</h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                                <span class="text-white text-sm">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium text-gray-800">Consultation & Assessment</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                                <span class="text-white text-sm">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium text-gray-800">Abhyanga Sessions (5/5)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-ayur-100 rounded-lg border-2 border-ayur-300">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-ayur-500 rounded-full flex items-center justify-center">
+                                                <span class="text-white text-sm">→</span>
+                                            </div>
+                                            <span class="text-sm font-medium text-gray-800">Shirodhara Sessions (0/3)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                                <span class="text-gray-600 text-sm">○</span>
+                                            </div>
+                                            <span class="text-sm font-medium text-gray-600">Udvartana Sessions (0/2)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button onclick="viewFullPlan()" class="mt-4 w-full text-ayur-600 hover:text-ayur-800 font-medium text-sm">
+                                    View Complete Treatment Plan →
+                                </button>
+                            </div>
+
+                            <div class="bg-white rounded-xl shadow-md p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Quick Health Check</h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-700">How are you feeling today?</span>
+                                    </div>
+                                    
+                                    <div class="flex space-x-2">
+                                        <button onclick="logMood('excellent')" class="flex-1 p-2 text-center bg-green-100 hover:bg-green-200 rounded transition-colors">
+                                            <div class="text-lg">😊</div>
+                                            <div class="text-xs text-green-800">Excellent</div>
+                                        </button>
+                                        <button onclick="logMood('good')" class="flex-1 p-2 text-center bg-blue-100 hover:bg-blue-200 rounded transition-colors">
+                                            <div class="text-lg">🙂</div>
+                                            <div class="text-xs text-blue-800">Good</div>
+                                        </button>
+                                        <button onclick="logMood('okay')" class="flex-1 p-2 text-center bg-yellow-100 hover:bg-yellow-200 rounded transition-colors">
+                                            <div class="text-lg">😐</div>
+                                            <div class="text-xs text-yellow-800">Okay</div>
+                                        </button>
+                                        <button onclick="logMood('poor')" class="flex-1 p-2 text-center bg-red-100 hover:bg-red-200 rounded transition-colors">
+                                            <div class="text-lg">😔</div>
+                                            <div class="text-xs text-red-800">Poor</div>
+                                        </button>
+                                    </div>
+                                    
+                                    <button onclick="detailedHealthLog()" class="w-full mt-3 text-ayur-600 hover:text-ayur-800 font-medium text-sm">
+                                        Log Detailed Symptoms →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reports-section" class="dashboard-section hidden">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-ayur-800 mb-2">My Health Reports & Analytics</h2>
+                        <p class="text-ayur-600">Comprehensive tracking of your Panchakarma journey with detailed insights</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-ayur-500">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-ayur-600 text-sm font-medium">Overall Progress</p>
+                                    <p class="text-3xl font-bold text-ayur-800">78%</p>
+                                    <p class="text-xs text-green-600 mt-1">↗ +12% this week</p>
+                                </div>
+                                <div class="w-12 h-12 bg-ayur-100 rounded-full flex items-center justify-center">
+                                    <span class="text-ayur-600 text-xl">📈</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-blue-600 text-sm font-medium">Pain Reduction</p>
+                                    <p class="text-3xl font-bold text-blue-800">85%</p>
+                                    <p class="text-xs text-green-600 mt-1">↗ +8% improvement</p>
+                                </div>
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 text-xl">💪</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-500">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-green-600 text-sm font-medium">Sleep Quality</p>
+                                    <p class="text-3xl font-bold text-green-800">90%</p>
+                                    <p class="text-xs text-green-600 mt-1">↗ +15% better</p>
+                                </div>
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600 text-xl">😴</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-orange-500">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-orange-600 text-sm font-medium">Stress Level</p>
+                                    <p class="text-3xl font-bold text-orange-800">28%</p>
+                                    <p class="text-xs text-green-600 mt-1">↘ -20% reduced</p>
+                                </div>
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <span class="text-orange-600 text-xl">🧘</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        
+                        <div class="bg-white rounded-xl shadow-md p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Wellness Progress Over Time</h3>
+                                <select id="progressTimeframe" onchange="updateProgressChart()" class="text-sm border border-gray-300 rounded px-3 py-1">
+                                    <option value="week">Last 7 Days</option>
+                                    <option value="month" selected>Last 30 Days</option>
+                                    <option value="all">All Time</option>
+                                </select>
+                            </div>
+                            <div class="h-80">
+                                <canvas id="progressChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Symptom Improvement</h3>
+                                <button onclick="exportChart('symptom')" class="text-sm text-ayur-600 hover:text-ayur-800 font-medium">Export</button>
+                            </div>
+                            <div class="h-80">
+                                <canvas id="symptomChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Export Reports</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button onclick="exportReport('pdf')" class="p-4 bg-ayur-100 hover:bg-ayur-200 text-ayur-800 rounded-lg transition-colors text-left">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📄</span>
+                                    <div>
+                                        <div class="font-medium">PDF Report</div>
+                                        <div class="text-sm text-ayur-600">Complete wellness summary</div>
+                                    </div>
+                                </div>
+                            </button>
+                            
+                            <button onclick="exportReport('excel')" class="p-4 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-lg transition-colors text-left">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📊</span>
+                                    <div>
+                                        <div class="font-medium">Excel Data</div>
+                                        <div class="text-sm text-blue-600">Raw data for in-depth analysis</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button onclick="exportReport('image')" class="p-4 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg transition-colors text-left">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🖼</span>
+                                    <div>
+                                        <div class="font-medium">Image (PNG)</div>
+                                        <div class="text-sm text-green-600">Save charts as images</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="treatments-section" class="dashboard-section hidden">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-ayur-800 mb-2">My Treatment Plan</h2>
+                        <p class="text-ayur-600">A detailed breakdown of your personalized Panchakarma therapy program</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Phase 1: Purva Karma (Preparatory Therapy)</h3>
+                        <p class="text-gray-700 mb-6">This phase prepares your body for the main cleansing process, helping to loosen toxins and ready them for elimination.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="p-6 bg-ayur-50 rounded-lg border border-ayur-200">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="text-xl">💧</span>
+                                    <h4 class="font-semibold text-ayur-800">Snehana (Oil Massage)</h4>
+                                </div>
+                                <p class="text-sm text-gray-600">**Description:** Daily full-body massage with medicated oils to moisturize the tissues and liquefy toxins.</p>
+                                <p class="text-sm text-gray-600 mt-2">**Schedule:** 7 Sessions • Daily (Dec 12 - Dec 18)</p>
+                            </div>
+                            <div class="p-6 bg-ayur-50 rounded-lg border border-ayur-200">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="text-xl">♨️</span>
+                                    <h4 class="font-semibold text-ayur-800">Swedana (Herbal Steam)</h4>
+                                </div>
+                                <p class="text-sm text-gray-600">**Description:** Herbal steam bath to open the body's channels and facilitate the movement of toxins.</p>
+                                <p class="text-sm text-gray-600 mt-2">**Schedule:** 7 Sessions • Daily after Snehana (Dec 12 - Dec 18)</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Phase 2: Pradhana Karma (Main Cleansing)</h3>
+                        <p class="text-gray-700 mb-6">This is the core phase of Panchakarma, where the five main cleansing therapies are performed.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="p-6 bg-green-50 rounded-lg border-l-4 border-green-500">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="text-xl">🌿</span>
+                                    <h4 class="font-semibold text-green-800">Vamana (Therapeutic Emesis)</h4>
+                                </div>
+                                <p class="text-sm text-gray-600">**Status:** Completed on Dec 19</p>
+                                <p class="text-sm text-gray-600 mt-2">**Outcome:** Kapha dosha successfully eliminated. Patient felt relief from congestion and heaviness.</p>
+                                <button onclick="provideFeedback()" class="mt-4 text-green-700 hover:text-green-900 font-medium text-sm">Provide Feedback →</button>
+                            </div>
+                            <div class="p-6 bg-ayur-50 rounded-lg border-l-4 border-ayur-500">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="text-xl">💧</span>
+                                    <h4 class="font-semibold text-ayur-800">Virechana (Therapeutic Purgation)</h4>
+                                </div>
+                                <p class="text-sm text-gray-600">**Status:** Scheduled for Dec 22</p>
+                                <p class="text-sm text-gray-600 mt-2">**Purpose:** To cleanse excess Pitta dosha from the body.</p>
+                                <button onclick="viewSessionDetails()" class="mt-4 text-ayur-600 hover:text-ayur-800 font-medium text-sm">View Details →</button>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Phase 3: Paschat Karma (Post-Therapy)</h3>
+                        <p class="text-gray-700 mb-6">This phase focuses on restoring the digestive and immune systems through diet and lifestyle management.</p>
+
+                        <div class="p-6 bg-ayur-50 rounded-lg border border-ayur-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-xl">🍽️</span>
+                                <h4 class="font-semibold text-ayur-800">Sansarjana Karma (Dietary Regimen)</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">**Description:** A gradual return to a normal diet, starting with light, easily digestible foods.</p>
+                            <p class="text-sm text-gray-600 mt-2">**Schedule:** Starts Dec 23 • Your doctor will provide a detailed meal plan.</p>
+                            <button onclick="viewFullPlan()" class="mt-4 text-ayur-600 hover:text-ayur-800 font-medium text-sm">View Meal Plan →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="support-section" class="dashboard-section hidden">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-ayur-800 mb-2">Get Support & Guidance</h2>
+                        <p class="text-ayur-600">Connect with your doctor, ask questions, and get help from our support team</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="p-6 bg-ayur-50 rounded-lg border border-ayur-200">
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-ayur-200 flex items-center justify-center text-2xl font-bold text-ayur-800">
+                                        DV
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-800">Dr. Ayush Verma</h4>
+                                        <p class="text-sm text-gray-600">Panchakarma Specialist</p>
+                                        <p class="text-sm text-gray-600">AyurCare Wellness Center</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-4">Have a question about your treatment or daily regimen? Get in touch with your doctor.</p>
+                                <button class="w-full bg-ayur-600 hover:bg-ayur-700 text-white font-medium py-3 rounded-lg transition-colors">
+                                    Message Dr. Verma
+                                </button>
+                            </div>
+
+                            <div class="p-6 bg-blue-50 rounded-lg border border-blue-200">
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-blue-200 flex items-center justify-center text-2xl">
+                                        💬
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-800">General Support</h4>
+                                        <p class="text-sm text-gray-600">Available 24/7</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-4">For booking issues, billing questions, or technical support, our team is here to help.</p>
+                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors">
+                                    Contact Support
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer">
+                                    <h4 class="font-medium text-gray-800">What should I expect during my first session?</h4>
+                                    <p class="text-sm text-gray-600 mt-2 hidden">Your first session is a detailed consultation with your doctor to assess your dosha, health concerns, and create a personalized plan.</p>
+                                </div>
+                                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer">
+                                    <h4 class="font-medium text-gray-800">How long does Panchakarma therapy take?</h4>
+                                    <p class="text-sm text-gray-600 mt-2 hidden">The duration varies from person to person, typically lasting between 7 to 21 days, depending on the severity of the condition.</p>
+                                </div>
+                                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer">
+                                    <h4 class="font-medium text-gray-800">Are the herbs and oils used in the treatments safe?</h4>
+                                    <p class="text-sm text-gray-600 mt-2 hidden">Yes, we use only high-quality, authentic, and organic Ayurvedic herbs and oils sourced from verified suppliers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="doctor-dashboard" class="page hidden">
+            <div class="bg-white shadow-md border-b border-ayur-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <div class="flex items-center space-x-6">
+                            <button onclick="showDashboardSection('doctor-dashboard')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">🏠</span>
+                                <span>Dashboard</span>
+                            </button>
+                            <button onclick="showDashboardSection('doctor-patients')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">👤</span>
+                                <span>My Patients</span>
+                            </button>
+                            <button onclick="showDashboardSection('doctor-appointments')" class="dashboard-nav-btn text-ayur-700 hover:text-ayur-900 font-medium transition-colors flex items-center space-x-2">
+                                <span class="text-xl">📅</span>
+                                <span>Appointments</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-ayur-200 rounded-full flex items-center justify-center">
+                                <span class="text-ayur-800 font-medium text-sm">AV</span>
+                            </div>
+                            <span class="text-ayur-700 font-medium">Dr. Ayush Verma</span>
+                            <button onclick="showNotifications()" class="relative p-2 text-ayur-600 hover:text-ayur-800 transition-colors">
+                                <span class="text-xl">🔔</span>
+                                <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">5</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div id="doctor-dashboard-section" class="dashboard-section">
+                    <div class="mb-8">
+                        <div class="bg-gradient-to-r from-ayur-600 to-ayur-700 rounded-2xl p-8 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h2 class="text-3xl font-bold mb-2">Hello, Dr. Verma! 👋</h2>
+                                    <p class="text-ayur-100 text-lg">Your daily insights and patient management tools</p>
+                                    <div class="mt-4 flex items-center space-x-6">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">12</div>
+                                            <div class="text-sm text-ayur-200">Active Patients</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">3</div>
+                                            <div class="text-sm text-ayur-200">Appointments Today</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold">78%</div>
+                                            <div class="text-sm text-ayur-200">Patient Success Rate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden md:block">
+                                    <div class="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <span class="text-6xl">🩺</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-md p-6 lg:col-span-2">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Today's Appointments</h3>
+                                <button onclick="showDashboardSection('doctor-appointments')" class="text-ayur-600 hover:text-ayur-800 text-sm font-medium">View All</button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-ayur-500 bg-ayur-50 p-4 rounded-r-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Priya Sharma</h4>
+                                            <p class="text-ayur-700 font-medium">10:00 AM - 11:00 AM</p>
+                                            <p class="text-sm text-gray-600 mt-1">Shirodhara Session</p>
+                                        </div>
+                                        <button class="px-3 py-1 bg-ayur-600 hover:bg-ayur-700 text-white text-sm rounded transition-colors">
+                                            View Patient
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 border-gray-300 bg-gray-50 p-4 rounded-r-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Amit Kumar</h4>
+                                            <p class="text-gray-700 font-medium">11:30 AM - 12:30 PM</p>
+                                            <p class="text-sm text-gray-600 mt-1">Follow-up Consultation</p>
+                                        </div>
+                                        <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm rounded transition-colors">
+                                            View Patient
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">New Patient Requests</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-ayur-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-full bg-ayur-200 flex items-center justify-center text-sm font-bold text-ayur-800">
+                                            MK
+                                        </div>
+                                        <p class="font-medium text-gray-800">Manoj Kapoor</p>
+                                    </div>
+                                    <button class="px-3 py-1 bg-ayur-600 hover:bg-ayur-700 text-white text-sm rounded transition-colors">
+                                        Review
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm font-bold text-gray-600">
+                                            SJ
+                                        </div>
+                                        <p class="font-medium text-gray-600">Sneha Jain</p>
+                                    </div>
+                                    <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm rounded transition-colors">
+                                        Review
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full text-ayur-600 hover:text-ayur-800 font-medium text-sm">
+                                View All Requests →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
