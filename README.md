@@ -40,12 +40,12 @@ Panchkarma/
 
 | Name           | Role(s) |
 |----------------|---------------------------------------------|
-| **Tushar Singh** | Frontend Developer • GitHub Manager • UI/UX |
-| **Nidhi**       | Full Stack Developer |
+| **Riya Maurya(Leader)**        | Backend Developer • Researcher |
+| **Nidhi**       | Full Stack Developer • UI/UX Designer|
+| **Tushar Singh** | Frontend Developer • GitHub Manager • UI/UX Designer |
 | **Sameer Patel** | Backend Developer |
 | **Vaibhav Rastogi** | Backend Developer • ML Developer |
 | **Tanishq**     | Machine Learning Expert |
-| **Riya**        | Backend Developer • Researcher |
 
 ---
 
