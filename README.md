@@ -61,7 +61,7 @@ _Add some screenshots of your UI here once available._
 ---
 
 ## 🔗 Live Demo (Optional)
-[GitHub Pages / Deployment Link]()
+[GitHub Pages / Deployment Link](https://ayursutra-authenticpanchakarmahealing.netlify.app/)
 
 ---
 
